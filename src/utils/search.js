@@ -1,7 +1,7 @@
 function parseQuery(query) {
-    return query;
+  return query;
 }
 
 module.exports = {
-    parseQuery,
+  parseQuery,
 };

@@ -7,7 +7,9 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "test": "bash scripts/test.sh",
-    "lint": "bash scripts/lint.sh"
+    "lint": "bash scripts/lint.sh",
+    "prettify": "bash scripts/prettify.sh",
+    "prettify-check": "bash scripts/prettify-check.sh"
   },
   "author": "Tomas Baltrunas",
   "license": "MIT",
