@@ -9,7 +9,6 @@ const client = new elasticsearch.Client({
 
 async function searchTerm(term) {
   try {
-    // Construct search query here
     const res = await client.search({
       index: PROJECT_INDEX,
       body: {
@@ -18,7 +17,6 @@ async function searchTerm(term) {
         },
       },
     });
-    // Transform result here
     return res.hits.hits;
   } catch (err) {
     console.error(err);
