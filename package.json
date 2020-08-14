@@ -1,0 +1,26 @@
+{
+  "name": "dcu_project_search_backend",
+  "version": "1.0.0",
+  "description": "DCU Project Search Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "bash scripts/test.sh",
+    "lint": "bash scripts/lint.sh"
+  },
+  "author": "Tomas Baltrunas",
+  "license": "MIT",
+  "dependencies": {
+    "elasticsearch": "^16.7.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "jest": "^26.4.0",
+    "nodemon": "^2.0.4",
+    "prettier": "2.0.5"
+  }
+}
