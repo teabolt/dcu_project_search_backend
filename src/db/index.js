@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 const elasticsearch = require('elasticsearch');
 
 const PROJECT_INDEX = 'projects';
@@ -13,11 +15,13 @@ async function searchTerm(term) {
       index: PROJECT_INDEX,
       body: {
         query: {
-          match: { description: term },
+          multi_match: {
+            query: term,
+          },
         },
       },
     });
-    return res.hits.hits;
+    return res;
   } catch (err) {
     console.error(err);
     throw err;
