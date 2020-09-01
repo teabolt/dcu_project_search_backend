@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const morgan = require('morgan');
 
@@ -16,5 +17,5 @@ app.use(morgan('combined'));
 app.use(routes);
 
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+  console.log(`App listening at http://localhost:${PORT}`);
 });
