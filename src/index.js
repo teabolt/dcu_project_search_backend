@@ -8,6 +8,7 @@ require('./config/env');
 const routes = require('./routes/index.js');
 
 const PORT = process.env.PORT || 3001;
+const HOSTNAME = process.env.HOSTNAME || 'localhost';
 
 const app = express();
 
@@ -27,6 +28,6 @@ app.use(cors(corsOptions));
 app.use(routes);
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`App listening at http://localhost:${PORT}`);
+app.listen(PORT, HOSTNAME, () => {
+  console.log(`App listening at http://${HOSTNAME}:${PORT}`);
 });
