@@ -18,7 +18,7 @@ app.use(morgan('combined'));
 
 // CORS
 const corsOptions = {
-  origin: process.env.FE_HOST,
+  origin: process.env.CORS_ALLOW_ALL ? '*' : process.env.FE_HOST,
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
