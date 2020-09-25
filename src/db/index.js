@@ -7,7 +7,7 @@ const elasticsearch = require('elasticsearch');
 const PROJECT_INDEX = 'projects';
 
 const client = new elasticsearch.Client({
-  host: process.env.ES_HOST || 'localhost:9200',
+  host: process.env.ES_HOST || '0.0.0.0:9200',
   apiVersion: '7.x',
 });
 
