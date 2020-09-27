@@ -21,5 +21,5 @@ script: npm run prettify-check &&
 
 after_success:
   - docker build -t tomasbalt/dcu_project_search_backend:latest .
-  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login --password-stdin --username "$DOCKER_ID"
   - docker push tomasbalt/dcu_project_search_backend
