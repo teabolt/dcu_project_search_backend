@@ -14,7 +14,7 @@ RUN npm install --production
 COPY . ./
 
 # Default port we intend to expose
-EXPOSE 3001
+EXPOSE 8080
 
 # Default command to run when starting the container
 CMD ["npm", "run", "start"]
