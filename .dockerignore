@@ -1,4 +1,8 @@
+# JS
 node_modules
 
-# Environment
+# Environment files
 .env
+
+# VSCode
+*.code-workspace
