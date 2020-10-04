@@ -1,7 +1,11 @@
+/* eslint-disable no-console */
 const express = require('express');
+const httpStatusCodes = require('http-status-codes');
 
 const db = require('../../db');
 const searchUtils = require('../../utils/search');
+
+const { StatusCodes } = httpStatusCodes;
 
 const router = express.Router();
 
@@ -23,22 +27,17 @@ router.get('/', async (req, res) => {
   const query = req.query.q;
   if (!query) {
     // TODO: error messages
-    res.status(400).end();
+    res.status(StatusCodes.BAD_REQUEST).end();
   }
   const { from, limit } = req.query;
   const parsedQuery = searchUtils.parseQuery(query);
   try {
     const results = await db.searchTerm(parsedQuery, from, limit);
-    const total = results.hits.total.value;
-    const { hits } = results.hits;
-    // eslint-disable-next-line no-underscore-dangle
-    const hitsPretty = hits.map((hit) => hit._source);
-    res.json({
-      total,
-      results: hitsPretty,
-    });
-  } catch (e) {
-    res.status(503).end();
+    res.json(results);
+  } catch (err) {
+    // TODO: error messages
+    console.error(err);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).end();
   }
 });
 
